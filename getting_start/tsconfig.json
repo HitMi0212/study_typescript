@@ -1,0 +1,8 @@
+// https://www.typescriptlang.org/tsconfig 속성 설명
+{
+    "compilerOptions": {    // 컴파일시의 옵션
+        "allowJs" : true,       // js를 허용하겠다
+        "checkJs": true,        // ts-check와 같은 기능
+        "noImplicitAny": true   // 모든 타입에 대해 any타입이라도 넣어야한다는 옵션
+    }
+}

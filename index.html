@@ -1,0 +1,29 @@
+<h2>타입스크립트의 장점</h2>
+<span>1. 에러의 사전 방지</span>
+2. 코드 가이드 및 자동완성(개발 생산성 향상)
+
+타입스크립트 라이브러리 선택
+1. 폴더 접근
+2. npm i typescript -g
+
+컴파일
+tsc "파일명.ts"
+
+-> 번거로우니 웹팩을 사용하는걸 추천
+
+타입핑 : 타입이 정의되지 않은 코드에 타입을 입혀주는 행위
+
+// 타입 정의
+type Todo_type = {
+  id: number;
+  title: string;
+  done: boolean;
+};
+
+// 인터페이스
+interface Todo {
+  id: number;
+  title: string;
+  done: boolean;
+};
+

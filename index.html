@@ -93,3 +93,11 @@ const handler = function(uiEvent) {
 
 구조적 타이핑
  - 코드 구조 관점에서 타입이 서로 호환되는지 여부를 판단.
+
+ 맵드 타입(Mapped Type)
+  - 기존에 정의되어 있는 타입을 새로운 타입으로 변환해 주는 문법
+  - js의 map() 함수를 타입에 적용한 것과 같은 효과를 가진다.
+  - { [P in K] : T }
+  - { [P in K] ? : T }
+  - { readonly [P in K] : T }
+  - { readonly [P in K] ? : T }

@@ -9,7 +9,6 @@
  * @typedef {object} CovidSummary
  * @property {Array<object>} Country
  */
-
 // api
 /**
  * 
@@ -21,6 +20,7 @@
     - [ ] 타입스크립트 라이브러리 설치 [npm i typescript --save-dev]
     - [ ] 타입스크립트 설정 파일 생성 및 기본 값 추가 []
     - [ ] 자바스크립트 파일을 타입스크립트 파일로 변환
+    - [ ] `tsc` 명령어로 타입스크립트 컴파일하기
 
 ## 참고 자료
 

@@ -25,6 +25,9 @@
 2. 명시적인 `any` 선언하기
     - `tsconfig.json`파일에 `noImplicitAny` 값을 `true`로 추가
 
+3. 라이브러리 설치
+    - `npm i -D typescript @babel/core @babel/preset-env @babel/preset-typescript @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint prettier eslint-plugin-prettier`
+
 ## 참고 자료
 
 - [존스 홉킨스 코로나 현황](https://www.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6)

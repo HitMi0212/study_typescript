@@ -10,7 +10,7 @@ function getUnixTimestamp(date: Date) {
 const confirmedTotal = $('.confirmed-total') as HTMLSpanElement;
 const deathsTotal = $('.deaths') as HTMLParagraphElement;
 const recoveredTotal = $('.recovered') as HTMLParagraphElement;
-const lastUpdatedTime = $('.last-updated-time') as HTMLParagraphElement;;
+const lastUpdatedTime = $('.last-updated-time') as HTMLParagraphElement;
 const rankList = $('.rank-list');
 const deathsList = $('.deaths-list');
 const recoveredList = $('.recovered-list');
@@ -34,7 +34,7 @@ function createSpinnerElement(id: string) {
 
 // state
 let isDeathLoading = false;
-let isRecoveredLoading = false;
+const isRecoveredLoading = false;
 
 function fetchCovidSummary() {
   const url = 'https://api.covid19api.com/summary';
@@ -44,7 +44,7 @@ function fetchCovidSummary() {
 enum CovidStatus {
   Confirmed = 'confirmed',
   Recovered = 'recovered',
-  Deaths = 'deaths'
+  Deaths = 'deaths',
 }
 
 function fetchCountryInfo(countryCode: string, status: CovidStatus) {
@@ -82,7 +82,10 @@ async function handleListClick(event: any) {
   clearRecoveredList();
   startLoadingAnimation();
   isDeathLoading = true;
-  const { data: deathResponse } = await fetchCountryInfo(selectedId, CovidStatus.Deaths);
+  const { data: deathResponse } = await fetchCountryInfo(
+    selectedId,
+    CovidStatus.Deaths,
+  );
   const { data: recoveredResponse } = await fetchCountryInfo(
     selectedId,
     CovidStatus.Recovered,
@@ -172,7 +175,7 @@ async function setupData() {
 }
 
 function renderChart(data: any, labels: any) {
-  var ctx = $('#lineChart').getContext('2d');
+  const ctx = $('#lineChart').getContext('2d');
   Chart.defaults.color = '#f5eaea';
   Chart.defaults.font.family = 'Exo 2';
   new Chart(ctx, {
@@ -196,7 +199,9 @@ function setChartData(data: any) {
   const chartData = data.slice(-14).map((value: any) => value.Cases);
   const chartLabel = data
     .slice(-14)
-    .map((value: any) => new Date(value.Date).toLocaleDateString().slice(5, -1));
+    .map((value: any) =>
+      new Date(value.Date).toLocaleDateString().slice(5, -1),
+    );
   renderChart(chartData, chartLabel);
 }
 

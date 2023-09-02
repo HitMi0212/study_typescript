@@ -24,9 +24,16 @@
 
 2. 명시적인 `any` 선언하기
     - `tsconfig.json`파일에 `noImplicitAny` 값을 `true`로 추가
+    - 가능한 구체적인 타입으로 타입 정의
 
 3. 라이브러리 설치
     - `npm i -D typescript @babel/core @babel/preset-env @babel/preset-typescript @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint prettier eslint-plugin-prettier`
+
+4. 프로젝트 환경 구성
+    - babel, eslint, perttier 등의 환경 설정
+
+5. 외부 라이브러리 모듈화
+
 
 ## 참고 자료
 

@@ -23,6 +23,9 @@ module.exports = {
         arrowParens: 'avoid',
       },
     ],
+    'no-unused-vars': 'off',
+    '@typescript-eslint/no-unused-vars': 'warn',
+    '@typescript-eslint/no-explicit-any': 'warn',
   },
   parserOptions: {
     parser: '@typescript-eslint/parser',

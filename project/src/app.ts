@@ -1,5 +1,7 @@
 import axios, { AxiosResponse } from 'axios';
 import Chart from 'chart.js/auto';
+// 타입 모듈
+import { CovidSummaryResponse, CountrySummaryResponse } from './covid';
 
 // utils
 function $(selector: string) {
@@ -39,13 +41,6 @@ function createSpinnerElement(id: string) {
 let isDeathLoading = false;
 const isRecoveredLoading = false;
 
-interface CovidSummaryResponse {
-  Countries: any[];
-  Date: string;
-  Global: object;
-  Message: string;
-}
-
 function fetchCovidSummary(): Promise<AxiosResponse<CovidSummaryResponse>> {
   const url = 'https://api.covid19api.com/summary';
   return axios.get(url);
@@ -57,7 +52,10 @@ enum CovidStatus {
   Deaths = 'deaths',
 }
 
-function fetchCountryInfo(countryCode: string, status: CovidStatus) {
+function fetchCountryInfo(
+  countryCode: string,
+  status: CovidStatus,
+): Promise<AxiosResponse<CountrySummaryResponse>> {
   // status params: confirmed, recovered, deaths
   const url = `https://api.covid19api.com/country/${countryCode}/status/${status}`;
   return axios.get(url);
